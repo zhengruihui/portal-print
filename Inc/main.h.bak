@@ -1,0 +1,370 @@
+/**
+  ******************************************************************************
+  * File Name          : main.h
+  * Description        : This file contains the common defines of the application
+  ******************************************************************************
+  * This notice applies to any and all portions of this file
+  * that are not between comment pairs USER CODE BEGIN and
+  * USER CODE END. Other portions of this file, whether 
+  * inserted by the user or by software development tools
+  * are owned by their respective copyright owners.
+  *
+  * Copyright (c) 2017 STMicroelectronics International N.V. 
+  * All rights reserved.
+  *
+  * Redistribution and use in source and binary forms, with or without 
+  * modification, are permitted, provided that the following conditions are met:
+  *
+  * 1. Redistribution of source code must retain the above copyright notice, 
+  *    this list of conditions and the following disclaimer.
+  * 2. Redistributions in binary form must reproduce the above copyright notice,
+  *    this list of conditions and the following disclaimer in the documentation
+  *    and/or other materials provided with the distribution.
+  * 3. Neither the name of STMicroelectronics nor the names of other 
+  *    contributors to this software may be used to endorse or promote products 
+  *    derived from this software without specific written permission.
+  * 4. This software, including modifications and/or derivative works of this 
+  *    software, must execute solely and exclusively on microcontroller or
+  *    microprocessor devices manufactured by or for STMicroelectronics.
+  * 5. Redistribution and use of this software other than as permitted under 
+  *    this license is void and will automatically terminate your rights under 
+  *    this license. 
+  *
+  * THIS SOFTWARE IS PROVIDED BY STMICROELECTRONICS AND CONTRIBUTORS "AS IS" 
+  * AND ANY EXPRESS, IMPLIED OR STATUTORY WARRANTIES, INCLUDING, BUT NOT 
+  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+  * PARTICULAR PURPOSE AND NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY
+  * RIGHTS ARE DISCLAIMED TO THE FULLEST EXTENT PERMITTED BY LAW. IN NO EVENT 
+  * SHALL STMICROELECTRONICS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
+  * OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
+  * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
+  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  *
+  ******************************************************************************
+  */
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __MAIN_H
+#define __MAIN_H
+  /* Includes ------------------------------------------------------------------*/
+
+/* USER CODE BEGIN Includes */
+
+/* USER CODE END Includes */
+
+/* Private define ------------------------------------------------------------*/
+
+#define MATERIAL1_CHK_PIN_Pin GPIO_PIN_2
+#define MATERIAL1_CHK_PIN_GPIO_Port GPIOE
+#define MATERIAL2_CHK_PIN_Pin GPIO_PIN_3
+#define MATERIAL2_CHK_PIN_GPIO_Port GPIOE
+#define BEEP1_PIN_Pin GPIO_PIN_4
+#define BEEP1_PIN_GPIO_Port GPIOE
+#define LED_G_PIN_Pin GPIO_PIN_5
+#define LED_G_PIN_GPIO_Port GPIOE
+#define LED_Y_PIN_Pin GPIO_PIN_6
+#define LED_Y_PIN_GPIO_Port GPIOE
+#define LED_R_PIN_Pin GPIO_PIN_8
+#define LED_R_PIN_GPIO_Port GPIOI
+#define BEEP2_PIN_Pin GPIO_PIN_0
+#define BEEP2_PIN_GPIO_Port GPIOF
+#define FAN1_PIN_Pin GPIO_PIN_1
+#define FAN1_PIN_GPIO_Port GPIOF
+#define FAN2_PIN_Pin GPIO_PIN_2
+#define FAN2_PIN_GPIO_Port GPIOF
+#define FAN3_PIN_Pin GPIO_PIN_12
+#define FAN3_PIN_GPIO_Port GPIOI
+#define FAN4_PIN_Pin GPIO_PIN_13
+#define FAN4_PIN_GPIO_Port GPIOI
+#define FAN5_PIN_Pin GPIO_PIN_14
+#define FAN5_PIN_GPIO_Port GPIOI
+#define FAN6_PIN_Pin GPIO_PIN_3
+#define FAN6_PIN_GPIO_Port GPIOF
+#define FAN7_PIN_Pin GPIO_PIN_4
+#define FAN7_PIN_GPIO_Port GPIOF
+#define FAN8_PIN_Pin GPIO_PIN_5
+#define FAN8_PIN_GPIO_Port GPIOF
+#define FAN9_PIN_Pin GPIO_PIN_6
+#define FAN9_PIN_GPIO_Port GPIOF
+#define STEPPER1_STEP_PIN_Pin GPIO_PIN_7
+#define STEPPER1_STEP_PIN_GPIO_Port GPIOF
+#define STEPPER1_DIR_PIN_Pin GPIO_PIN_8
+#define STEPPER1_DIR_PIN_GPIO_Port GPIOF
+#define STEPPER1_EN_PIN_Pin GPIO_PIN_9
+#define STEPPER1_EN_PIN_GPIO_Port GPIOF
+#define STEPPER2_STEP_PIN_Pin GPIO_PIN_10
+#define STEPPER2_STEP_PIN_GPIO_Port GPIOF
+#define STEPPER2_DIR_PIN_Pin GPIO_PIN_0
+#define STEPPER2_DIR_PIN_GPIO_Port GPIOC
+#define STEPPER2_EN_PIN_Pin GPIO_PIN_1
+#define STEPPER2_EN_PIN_GPIO_Port GPIOC
+#define STEPPER3_STEP_PIN_Pin GPIO_PIN_2
+#define STEPPER3_STEP_PIN_GPIO_Port GPIOC
+#define STEPPER3_DIR_PIN_Pin GPIO_PIN_3
+#define STEPPER3_DIR_PIN_GPIO_Port GPIOC
+#define ADC1_TEMP1_PIN_Pin GPIO_PIN_0
+#define ADC1_TEMP1_PIN_GPIO_Port GPIOA
+#define ADC1_TEMP2_PIN_Pin GPIO_PIN_1
+#define ADC1_TEMP2_PIN_GPIO_Port GPIOA
+#define ADC1_TEMP3_PIN_Pin GPIO_PIN_2
+#define ADC1_TEMP3_PIN_GPIO_Port GPIOA
+#define STEPPER3_EN_PIN_Pin GPIO_PIN_2
+#define STEPPER3_EN_PIN_GPIO_Port GPIOH
+#define STEPPER4_STEP_PIN_Pin GPIO_PIN_3
+#define STEPPER4_STEP_PIN_GPIO_Port GPIOH
+#define STEPPER4_DIR_PIN_Pin GPIO_PIN_4
+#define STEPPER4_DIR_PIN_GPIO_Port GPIOH
+#define STEPPER4_EN_PIN_Pin GPIO_PIN_5
+#define STEPPER4_EN_PIN_GPIO_Port GPIOH
+#define ADC1_TEMP4_PIN_Pin GPIO_PIN_3
+#define ADC1_TEMP4_PIN_GPIO_Port GPIOA
+#define ADC1_TEMP5_PIN_Pin GPIO_PIN_4
+#define ADC1_TEMP5_PIN_GPIO_Port GPIOA
+#define ADC1_TEMP6_PIN_Pin GPIO_PIN_5
+#define ADC1_TEMP6_PIN_GPIO_Port GPIOA
+#define ADC1_TEMP7_PIN_Pin GPIO_PIN_6
+#define ADC1_TEMP7_PIN_GPIO_Port GPIOA
+#define ADC1_TEMP8_PIN_Pin GPIO_PIN_7
+#define ADC1_TEMP8_PIN_GPIO_Port GPIOA
+#define SERVO1_STEP_PIN_Pin GPIO_PIN_4
+#define SERVO1_STEP_PIN_GPIO_Port GPIOC
+#define SERVO1_DIR_PIN_Pin GPIO_PIN_5
+#define SERVO1_DIR_PIN_GPIO_Port GPIOC
+#define ADC1_TEMP9_PIN_Pin GPIO_PIN_0
+#define ADC1_TEMP9_PIN_GPIO_Port GPIOB
+#define ADC1_TEMP10_PIN_Pin GPIO_PIN_1
+#define ADC1_TEMP10_PIN_GPIO_Port GPIOB
+#define SERVO1_EN_PIN_Pin GPIO_PIN_2
+#define SERVO1_EN_PIN_GPIO_Port GPIOB
+#define SERVO2_STEP_PIN_Pin GPIO_PIN_15
+#define SERVO2_STEP_PIN_GPIO_Port GPIOI
+#define SERVO2_DIR_PIN_Pin GPIO_PIN_0
+#define SERVO2_DIR_PIN_GPIO_Port GPIOJ
+#define SERVO2_EN_PIN_Pin GPIO_PIN_1
+#define SERVO2_EN_PIN_GPIO_Port GPIOJ
+#define SERVO3_STEP_PIN_Pin GPIO_PIN_2
+#define SERVO3_STEP_PIN_GPIO_Port GPIOJ
+#define SERVO3_DIR_PIN_Pin GPIO_PIN_3
+#define SERVO3_DIR_PIN_GPIO_Port GPIOJ
+#define SERVO3_EN_PIN_Pin GPIO_PIN_4
+#define SERVO3_EN_PIN_GPIO_Port GPIOJ
+#define SERVO4_STEP_PIN_Pin GPIO_PIN_11
+#define SERVO4_STEP_PIN_GPIO_Port GPIOF
+#define SERVO4_DIR_PIN_Pin GPIO_PIN_12
+#define SERVO4_DIR_PIN_GPIO_Port GPIOF
+#define SERVO4_EN_PIN_Pin GPIO_PIN_13
+#define SERVO4_EN_PIN_GPIO_Port GPIOF
+#define STEPPER_M8_DIR_PIN_Pin GPIO_PIN_14
+#define STEPPER_M8_DIR_PIN_GPIO_Port GPIOF
+#define STEPPER_M8_STEP_PIN_Pin GPIO_PIN_15
+#define STEPPER_M8_STEP_PIN_GPIO_Port GPIOF
+#define STEPPER_M8_EN_PIN_Pin GPIO_PIN_0
+#define STEPPER_M8_EN_PIN_GPIO_Port GPIOG
+#define STEPPER_M7_DIR_PIN_Pin GPIO_PIN_1
+#define STEPPER_M7_DIR_PIN_GPIO_Port GPIOG
+#define STEPPER_M7_STEP_PIN_Pin GPIO_PIN_7
+#define STEPPER_M7_STEP_PIN_GPIO_Port GPIOE
+#define STEPPER_M7_EN_PIN_Pin GPIO_PIN_8
+#define STEPPER_M7_EN_PIN_GPIO_Port GPIOE
+#define STEPPER_M6_DIR_PIN_Pin GPIO_PIN_9
+#define STEPPER_M6_DIR_PIN_GPIO_Port GPIOE
+#define STEPPER_M6_STEP_PIN_Pin GPIO_PIN_10
+#define STEPPER_M6_STEP_PIN_GPIO_Port GPIOE
+#define STEPPER_M6_EN_PIN_Pin GPIO_PIN_11
+#define STEPPER_M6_EN_PIN_GPIO_Port GPIOE
+#define STEPPER_M5_DIR_PIN_Pin GPIO_PIN_12
+#define STEPPER_M5_DIR_PIN_GPIO_Port GPIOE
+#define STEPPER_M5_STEP_PIN_Pin GPIO_PIN_13
+#define STEPPER_M5_STEP_PIN_GPIO_Port GPIOE
+#define STEPPER_M5_EN_PIN_Pin GPIO_PIN_14
+#define STEPPER_M5_EN_PIN_GPIO_Port GPIOE
+#define STEPPER_M9_EN_PIN_Pin GPIO_PIN_15
+#define STEPPER_M9_EN_PIN_GPIO_Port GPIOE
+#define STEPPER_M9_STEP_PIN_Pin GPIO_PIN_10
+#define STEPPER_M9_STEP_PIN_GPIO_Port GPIOB
+#define STEPPER_M9_DIR_PIN_Pin GPIO_PIN_11
+#define STEPPER_M9_DIR_PIN_GPIO_Port GPIOB
+#define STEPPER_M10_EN_PIN_Pin GPIO_PIN_6
+#define STEPPER_M10_EN_PIN_GPIO_Port GPIOH
+#define STEPPER_M10_STEP_PIN_Pin GPIO_PIN_7
+#define STEPPER_M10_STEP_PIN_GPIO_Port GPIOH
+#define STEPPER_M10_DIR_PIN_Pin GPIO_PIN_8
+#define STEPPER_M10_DIR_PIN_GPIO_Port GPIOH
+#define STEPPER_M11_EN_PIN_Pin GPIO_PIN_9
+#define STEPPER_M11_EN_PIN_GPIO_Port GPIOH
+#define STEPPER_M11_STEP_PIN_Pin GPIO_PIN_10
+#define STEPPER_M11_STEP_PIN_GPIO_Port GPIOH
+#define STEPPER_M11_DIR_PIN_Pin GPIO_PIN_11
+#define STEPPER_M11_DIR_PIN_GPIO_Port GPIOH
+#define STEPPER_M12_EN_PIN_Pin GPIO_PIN_12
+#define STEPPER_M12_EN_PIN_GPIO_Port GPIOH
+#define STEPPER_M12_STEP_PIN_Pin GPIO_PIN_12
+#define STEPPER_M12_STEP_PIN_GPIO_Port GPIOB
+#define USB_EN_PIN_Pin GPIO_PIN_13
+#define USB_EN_PIN_GPIO_Port GPIOB
+#define STEPPER_M12_DIR_PIN_Pin GPIO_PIN_8
+#define STEPPER_M12_DIR_PIN_GPIO_Port GPIOD
+#define STEPPER_M4_STEP_PIN_Pin GPIO_PIN_9
+#define STEPPER_M4_STEP_PIN_GPIO_Port GPIOD
+#define STEPPER_M4_DIR_PIN_Pin GPIO_PIN_10
+#define STEPPER_M4_DIR_PIN_GPIO_Port GPIOD
+#define STEPPER_M3_DIR_PIN_Pin GPIO_PIN_11
+#define STEPPER_M3_DIR_PIN_GPIO_Port GPIOD
+#define STEPPER_M4_EN_PIN_Pin GPIO_PIN_12
+#define STEPPER_M4_EN_PIN_GPIO_Port GPIOD
+#define STEPPER_M3_EN_PIN_Pin GPIO_PIN_13
+#define STEPPER_M3_EN_PIN_GPIO_Port GPIOD
+#define STEPPER_M3_STEP_PIN_Pin GPIO_PIN_14
+#define STEPPER_M3_STEP_PIN_GPIO_Port GPIOD
+#define STEPPER_M2_STEP_PIN_Pin GPIO_PIN_15
+#define STEPPER_M2_STEP_PIN_GPIO_Port GPIOD
+#define STEPPER_M2_DIR_PIN_Pin GPIO_PIN_6
+#define STEPPER_M2_DIR_PIN_GPIO_Port GPIOJ
+#define STEPPER_M1_DIR_PIN_Pin GPIO_PIN_7
+#define STEPPER_M1_DIR_PIN_GPIO_Port GPIOJ
+#define STEPPER_M2_EN_PIN_Pin GPIO_PIN_8
+#define STEPPER_M2_EN_PIN_GPIO_Port GPIOJ
+#define STEPPER_M1_EN_PIN_Pin GPIO_PIN_9
+#define STEPPER_M1_EN_PIN_GPIO_Port GPIOJ
+#define STEPPER_M1_STEP_PIN_Pin GPIO_PIN_10
+#define STEPPER_M1_STEP_PIN_GPIO_Port GPIOJ
+#define STEPPER_M13_EN_PIN_Pin GPIO_PIN_11
+#define STEPPER_M13_EN_PIN_GPIO_Port GPIOJ
+#define STEPPER_M13_STEP_PIN_Pin GPIO_PIN_0
+#define STEPPER_M13_STEP_PIN_GPIO_Port GPIOK
+#define STEPPER_M13_DIR_PIN_Pin GPIO_PIN_1
+#define STEPPER_M13_DIR_PIN_GPIO_Port GPIOK
+#define STEPPER_M14_EN_PIN_Pin GPIO_PIN_2
+#define STEPPER_M14_EN_PIN_GPIO_Port GPIOK
+#define STEPPER_M14_STEP_PIN_Pin GPIO_PIN_2
+#define STEPPER_M14_STEP_PIN_GPIO_Port GPIOG
+#define STEPPER_M14_DIR_PIN_Pin GPIO_PIN_3
+#define STEPPER_M14_DIR_PIN_GPIO_Port GPIOG
+#define STEPPER_M15_EN_PIN_Pin GPIO_PIN_4
+#define STEPPER_M15_EN_PIN_GPIO_Port GPIOG
+#define STEPPER_M15_STEP_PIN_Pin GPIO_PIN_5
+#define STEPPER_M15_STEP_PIN_GPIO_Port GPIOG
+#define STEPPER_M15_DIR_PIN_Pin GPIO_PIN_6
+#define STEPPER_M15_DIR_PIN_GPIO_Port GPIOG
+#define STEPPER_M16_EN_PIN_Pin GPIO_PIN_7
+#define STEPPER_M16_EN_PIN_GPIO_Port GPIOG
+#define STEPPER_M16_STEP_PIN_Pin GPIO_PIN_8
+#define STEPPER_M16_STEP_PIN_GPIO_Port GPIOG
+#define STEPPER_M16_DIR_PIN_Pin GPIO_PIN_6
+#define STEPPER_M16_DIR_PIN_GPIO_Port GPIOC
+#define LIMIT1_PIN_Pin GPIO_PIN_7
+#define LIMIT1_PIN_GPIO_Port GPIOC
+#define LIMIT2_PIN_Pin GPIO_PIN_8
+#define LIMIT2_PIN_GPIO_Port GPIOA
+#define LIMIT3_PIN_Pin GPIO_PIN_13
+#define LIMIT3_PIN_GPIO_Port GPIOH
+#define LIMIT4_PIN_Pin GPIO_PIN_14
+#define LIMIT4_PIN_GPIO_Port GPIOH
+#define LIMIT5_PIN_Pin GPIO_PIN_15
+#define LIMIT5_PIN_GPIO_Port GPIOH
+#define LIMIT6_PIN_Pin GPIO_PIN_0
+#define LIMIT6_PIN_GPIO_Port GPIOI
+#define LIMIT7_PIN_Pin GPIO_PIN_1
+#define LIMIT7_PIN_GPIO_Port GPIOI
+#define LIMIT8_PIN_Pin GPIO_PIN_2
+#define LIMIT8_PIN_GPIO_Port GPIOI
+#define LIMIT9_PIN_Pin GPIO_PIN_3
+#define LIMIT9_PIN_GPIO_Port GPIOI
+#define LIMIT10_PIN_Pin GPIO_PIN_0
+#define LIMIT10_PIN_GPIO_Port GPIOD
+#define LIMIT11_PIN_Pin GPIO_PIN_1
+#define LIMIT11_PIN_GPIO_Port GPIOD
+#define SD_EXIST_PIN_Pin GPIO_PIN_3
+#define SD_EXIST_PIN_GPIO_Port GPIOD
+#define LIMIT12_PIN_Pin GPIO_PIN_4
+#define LIMIT12_PIN_GPIO_Port GPIOD
+#define LIMIT13_PIN_Pin GPIO_PIN_5
+#define LIMIT13_PIN_GPIO_Port GPIOD
+#define LIMIT14_PIN_Pin GPIO_PIN_6
+#define LIMIT14_PIN_GPIO_Port GPIOD
+#define LIMIT15_PIN_Pin GPIO_PIN_7
+#define LIMIT15_PIN_GPIO_Port GPIOD
+#define LIMIT16_PIN_Pin GPIO_PIN_12
+#define LIMIT16_PIN_GPIO_Port GPIOJ
+#define KEY1_PIN_Pin GPIO_PIN_13
+#define KEY1_PIN_GPIO_Port GPIOJ
+#define KEY2_PIN_Pin GPIO_PIN_14
+#define KEY2_PIN_GPIO_Port GPIOJ
+#define THERMOCOUPLE_SDA_Pin GPIO_PIN_15
+#define THERMOCOUPLE_SDA_GPIO_Port GPIOJ
+#define THERMOCOUPLE_SCK_Pin GPIO_PIN_9
+#define THERMOCOUPLE_SCK_GPIO_Port GPIOG
+#define THERMOCOUPLE1_EN_PIN_Pin GPIO_PIN_10
+#define THERMOCOUPLE1_EN_PIN_GPIO_Port GPIOG
+#define THERMOCOUPLE2_EN_PIN_Pin GPIO_PIN_11
+#define THERMOCOUPLE2_EN_PIN_GPIO_Port GPIOG
+#define THERMOCOUPLE3_EN_PIN_Pin GPIO_PIN_12
+#define THERMOCOUPLE3_EN_PIN_GPIO_Port GPIOG
+#define THERMOCOUPLE4_EN_PIN_Pin GPIO_PIN_13
+#define THERMOCOUPLE4_EN_PIN_GPIO_Port GPIOG
+#define THERMOCOUPLE5_EN_PIN_Pin GPIO_PIN_14
+#define THERMOCOUPLE5_EN_PIN_GPIO_Port GPIOG
+#define THERMOCOUPLE6_EN_PIN_Pin GPIO_PIN_3
+#define THERMOCOUPLE6_EN_PIN_GPIO_Port GPIOK
+#define HEATER1_PIN_Pin GPIO_PIN_4
+#define HEATER1_PIN_GPIO_Port GPIOK
+#define HEATER2_PIN_Pin GPIO_PIN_5
+#define HEATER2_PIN_GPIO_Port GPIOK
+#define HEATER3_PIN_Pin GPIO_PIN_6
+#define HEATER3_PIN_GPIO_Port GPIOK
+#define HEATER4_PIN_Pin GPIO_PIN_7
+#define HEATER4_PIN_GPIO_Port GPIOK
+#define HEATER5_PIN_Pin GPIO_PIN_15
+#define HEATER5_PIN_GPIO_Port GPIOG
+#define HEATER6_PIN_Pin GPIO_PIN_5
+#define HEATER6_PIN_GPIO_Port GPIOB
+#define HEATER7_PIN_Pin GPIO_PIN_6
+#define HEATER7_PIN_GPIO_Port GPIOB
+#define HEATER8_PIN_Pin GPIO_PIN_7
+#define HEATER8_PIN_GPIO_Port GPIOB
+#define MATERIAL1_BLOCK_PIN_Pin GPIO_PIN_0
+#define MATERIAL1_BLOCK_PIN_GPIO_Port GPIOE
+#define MATERIAL2_BLOCK_PIN_Pin GPIO_PIN_1
+#define MATERIAL2_BLOCK_PIN_GPIO_Port GPIOE
+#define MATERIAL3_CHK_PIN_Pin GPIO_PIN_4
+#define MATERIAL3_CHK_PIN_GPIO_Port GPIOI
+#define MATERIAL4_CHK_PIN_Pin GPIO_PIN_5
+#define MATERIAL4_CHK_PIN_GPIO_Port GPIOI
+#define MATERIAL5_CHK_PIN_Pin GPIO_PIN_6
+#define MATERIAL5_CHK_PIN_GPIO_Port GPIOI
+#define MATERIAL6_CHK_PIN_Pin GPIO_PIN_7
+#define MATERIAL6_CHK_PIN_GPIO_Port GPIOI
+
+/* USER CODE BEGIN Private defines */
+
+#define _GET_PORT(IO)				(IO ## _GPIO_Port)
+#define _GET_PIN(IO)				(IO ## _Pin)
+
+#define GET_PORT(IO)				_GET_PORT(IO)
+#define GET_PIN(IO)					_GET_PIN(IO)
+
+//端口出力
+#define WRITE(IO, v)           do {\
+                                    HAL_GPIO_WritePin(PORT(IO), PIN(IO), v);  \
+                                }while(0)
+//读取端口状�??
+#define READ(IO)               (bool)HAL_GPIO_ReadPin(PORT(IO), PIN(IO))
+
+/* USER CODE END Private defines */
+
+void _Error_Handler(char *, int);
+
+#define Error_Handler() _Error_Handler(__FILE__, __LINE__)
+
+/**
+  * @}
+  */ 
+
+/**
+  * @}
+*/ 
+
+#endif /* __MAIN_H */
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

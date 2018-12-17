@@ -1,0 +1,107 @@
+/********************** (C) COPYRIGHT 2015 DediBot ******************************
+  * @file    PortalFrame.h
+  * @author  Dedibot
+  * @version V1.2.0
+  * @date    
+  * @brief   龙门架
+*********************************************************************************/
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef PORTALFRAME_H
+#define PORTALFRAME_H
+#include "stm32f4xx.h"
+#include "structs.h"
+#include "PositionMng.h"
+#include "PrintDataMng.h"
+#include "EventMng.h"
+#include "configuration.h"
+
+#define GCODEFILE_NUM_MAX	(10)
+//打印中的子状态
+typedef enum 
+{
+	PRINT_STAGE_STOPPRINT,		//停止中
+	PRINT_STAGE_READPRINTTIME,	//获取打印时间
+	PRINT_STAGE_PRINTING,		//打印中
+	PRINT_STAGE_WAITTEMP,		//等待加热
+	PRINT_STAGE_STOPWAITING,	//停止等待中
+	PRINT_STAGE_STOPACTION,	 	//停止动作中
+	PRINT_STAGE_MAX
+}PRINT_STAGE;
+
+//打印时需要保存的信息
+typedef struct {
+	PRINT_STAGE stage;			    //打印状态
+	
+	u32 totalgcodeSize;				//gcode总字节数
+
+	u32 printGcodeCount;			//已打印gcode字节数
+	
+	u32 TotalPrintTime;
+	
+	u32 PrintTime;					//打印时间
+	
+	EVENT eventSaved;				//保存的事件
+	
+	char gcode[ONELINE_GCODE_MAXSIZE];
+	
+}PRINTINFO;
+
+//打印机主要状态
+typedef enum
+{
+	PF_STAGE_STANDBY,
+	PF_STAGE_PRINT
+	
+}PF_STAGE;
+
+//打印模式
+typedef enum
+{
+	PRINTMODE_NORMAL,
+	PRINTMODE_INFINITE
+}PRINTMODE;
+
+
+typedef struct
+{
+	PRINTMODE printMode;
+	u8	printFileCount;
+	u8	printFileSel;
+	char printFileName[GCODEFILE_NUM_MAX][100];
+	float extruderAngle;
+}PORTALFRAME_CONFIG;
+
+
+typedef struct
+{
+	PF_STAGE stage;
+	
+	int extruderCount;
+	char **extruderCodes;
+	EXTRUDER_STRU *extruder_Stru;
+	
+	POSITIONMNG positionMng;
+	PRINTDATAMNG printDataMng;
+	
+	PRINTINFO printInfo;
+	
+}PORTALFRAME;
+
+
+
+/*******************************************
+	输出接口
+********************************************/
+extern void PortalFrame_Init_1( PORTALFRAME *this );
+extern void PortalFrame_Init_2( PORTALFRAME *this );
+extern void PortalFrame_Init_3( PORTALFRAME *this );
+extern void PortalFrame_Setup( PORTALFRAME *this, PORTALFRAME_CONFIG *config );
+
+extern void PortalFrame_Go_Standby( PORTALFRAME *this );
+
+extern void PortalFrame_EventAction(PORTALFRAME *this, EVENT e);
+extern void PortalFrame_Pro(PORTALFRAME *this);
+
+extern u8 PortalFrame_Get_MainStatus( PORTALFRAME *this );
+
+#endif  //STATUS_MANAGE_H
