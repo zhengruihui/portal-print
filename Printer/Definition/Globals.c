@@ -272,7 +272,7 @@ const enum _AXIS g_subHomingAxes_2[] =
 };
 const char *g_SetHomeGcode_2[2] = 
 {
-	"G92 X0 Y0 Z0",
+	"G92 X0 Y0 Z0 E0",
 	"G92 X0 Y0",
 };
 

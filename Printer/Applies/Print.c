@@ -52,7 +52,7 @@ void Print_Exit( PORTALFRAME *this )
 	{
 		TempCtrl_StopHeat(this->extruder_Stru[i].heatItem);
 	}
-
+	Logger_string("PRINT DONE.\n");
 	PortalFrame_Go_Standby(this);
 }
 

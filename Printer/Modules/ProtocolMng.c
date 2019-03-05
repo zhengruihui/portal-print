@@ -242,7 +242,7 @@ buf:数据
 len:长度
 返回值：无
 ********************************************************************/
-void ProtocolMng_LoadDataToQueue(u8 *buf, u32 len ,bool wait)
+ void ProtocolMng_LoadDataToQueue(u8 *buf, u32 len ,bool wait)
 {	
 	Send_Data data;
 	memcpy(data.SendData ,buf ,len);
@@ -393,7 +393,13 @@ void ProtocolMng_11H(u8 cmd ,u16 len)
 {
 	u16 crc_temp;
 
-	float line_percent = (g_printer.portalFrame[PORTALFRAME_2].current_gcode_line / g_printer.portalFrame[PORTALFRAME_2].total_gcode_line) * 100;
+	
+	float line_percent = 0;
+	if(g_printer.portalFrame[PORTALFRAME_2].total_gcode_line != 0)
+	{
+		line_percent = (g_printer.portalFrame[PORTALFRAME_2].current_gcode_line / g_printer.portalFrame[PORTALFRAME_2].total_gcode_line) * 100;
+	}
+		
 	uint8_t *print_percent = (uint8_t *)&line_percent;
 	
 	float tmpe1 = TempCtrl_getCurrentTemp(1);
@@ -420,7 +426,16 @@ void ProtocolMng_11H(u8 cmd ,u16 len)
 
 	Port_SendBuf[5] = g_printer.portalFrame[PORTALFRAME_2].stage;	 //主状态
 	Port_SendBuf[6] = g_printer.portalFrame[PORTALFRAME_2].printInfo.stage;	 //子状态
-	Port_SendBuf[7] = 0xff;	 //异常
+	
+	if(TempCtrl_getCurrentTemp(1) < 0 | TempCtrl_getCurrentTemp(2) < 0 | TempCtrl_getCurrentTemp(3) < 0 | TempCtrl_getCurrentTemp(4) < 0)
+	{
+			Port_SendBuf[7] = 1; //异常
+	}
+	else
+	{
+			Port_SendBuf[7] = 0;	 
+	}
+
 	
 
 	Port_SendBuf[8] = tmperature1[0];	 //温度1
@@ -470,13 +485,18 @@ void ProtocolMng_11H(u8 cmd ,u16 len)
 
 	
 
-	crc_temp = GetCRC16(Port_SendBuf+2, 38);
-	Port_SendBuf[40] = (crc_temp>>8)&0xFF;
-	Port_SendBuf[41] = crc_temp&0xFF;	
-	//ProtocolMng_LoadDataToQueue(Port_SendBuf, 32 ,False);
-	//ProtocolMng_LoadAckData(Port_SendBuf, m_CmdId[CMD_GET_PRINTSTATE],32);
+	crc_temp = GetCRC16(Port_SendBuf+2, len);
+	Port_SendBuf[len+2] = (crc_temp>>8)&0xFF;
+	Port_SendBuf[len+3] = crc_temp&0xFF;	
+
 	
-	sendto(0, Port_SendBuf, 42, net_work.desip, DHCP_SERVER_PORT);
+//	if(PF_STAGE_PRINT == g_printer.portalFrame[PORTALFRAME_2].stage)
+//	{
+			//sendto(0, Port_SendBuf, len+4, net_work.desip, DHCP_SERVER_PORT);
+			ProtocolMng_LoadDataToQueue(Port_SendBuf, 42 ,False);
+			//ProtocolMng_LoadAckData(Port_SendBuf, m_CmdId[CMD_GET_PRINTSTATE],42);
+//	}
+	
 }
 /*******************************************************************
 功能：12H
@@ -1342,11 +1362,21 @@ void ProtocolMng_Pro(void)
 	
 	if(send_flag == 1)
 	{
-		ProtocolMng_11H(11, 25);
+		ProtocolMng_11H(11, 38);
 		send_flag = 0;
+		//Logger_string("......\n");
 	}
-
 	
+	for(int i=0; i < g_printer.portalFrame[PORTALFRAME_2].extruderCount; i++)
+	{
+		if(TempCtrl_getCurrentTemp(i+1) < 0 | TempCtrl_getCurrentTemp(i+1) > 330)
+		{
+			//Logger_string("STOP");
+			g_printer.portalFrame[PORTALFRAME_2].printInfo.stage = PRINT_STAGE_STOPWAITING;
+			TempCtrl_StopHeat(g_printer.portalFrame[PORTALFRAME_2].extruder_Stru[i].heatItem);
+		}
+		
+	}	
 }
 
 /******************************************

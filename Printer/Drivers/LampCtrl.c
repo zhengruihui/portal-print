@@ -10,7 +10,7 @@
 ********************************************/
 void LampCtrl_ON(void)
 {
-	HAL_GPIO_WritePin(GET_PORT(FAN9_PIN), GET_PIN(FAN9_PIN), LOW);
+	//HAL_GPIO_WritePin(GET_PORT(FAN9_PIN), GET_PIN(FAN9_PIN), LOW);
 }
 
 /*******************************************
@@ -22,6 +22,6 @@ void LampCtrl_ON(void)
 ********************************************/
 void LampCtrl_OFF(void)
 {
-	HAL_GPIO_WritePin(GET_PORT(FAN9_PIN), GET_PIN(FAN9_PIN), HIGH);
+	//HAL_GPIO_WritePin(GET_PORT(FAN9_PIN), GET_PIN(FAN9_PIN), HIGH);
 }
 

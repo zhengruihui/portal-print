@@ -117,7 +117,7 @@ void network_init(void)
 	  net_work.desip[0] = 192;
     net_work.desip[1] = 168;
     net_work.desip[2] = 1;
-    net_work.desip[3] = 89;
+    net_work.desip[3] = 5;
 	
 }
 

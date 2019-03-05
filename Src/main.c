@@ -226,7 +226,7 @@ void SystemClock_Config(void)
 void HAL_SYSTICK_Callback(void)
 {
 	heart_count ++;
-	if(heart_count >= 1000)
+	if(heart_count >= 5000)
 	{
 	  send_flag = 1;
 		heart_count = 0;

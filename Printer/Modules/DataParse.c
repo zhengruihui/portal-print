@@ -330,6 +330,7 @@ bool DataParse_G_M_Ctrl( PORTALFRAME *this, char* gcode )
 				if(DataParse_code_seen_chr(gcode, 'N', &value))
 				{
 						this->total_gcode_line = value;
+						this->current_gcode_line = 0;
 				}
 				break;	
 			default:
